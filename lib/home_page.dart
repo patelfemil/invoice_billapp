@@ -16,11 +16,6 @@ class _HomePageState extends State<HomePage> {
   final TextEditingController state = TextEditingController();
   final TextEditingController city = TextEditingController();
 
-  String countryValue = "";
-  String stateValue = "";
-  String cityValue = "";
-  String address = "";
-
   bool passwordVisible = false;
   bool confirmPasswordVisible = false;
 
@@ -28,7 +23,8 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.blueGrey,
+        backgroundColor: Colors.blue,
+        elevation: 0,
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -36,8 +32,20 @@ class _HomePageState extends State<HomePage> {
             userDetails(enterText: 'Enter your Name', labelText: 'First Name'),
             userDetails(
                 enterText: 'Enter your Lastname', labelText: 'Last Name'),
-            userDetails(
-                enterText: 'Enter your Email address', labelText: 'Email'),
+            Container(
+              padding: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+              child: TextField(
+                keyboardType: TextInputType.emailAddress,
+                cursorColor: Colors.black,
+                decoration: InputDecoration(
+                  labelText: 'Email',
+                  hintText: 'Enter your Emailaddress',
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(10.0),
+                  ),
+                ),
+              ),
+            ),
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
               child: IntlPhoneField(
@@ -141,7 +149,8 @@ class _HomePageState extends State<HomePage> {
 }
 
 Widget userDetails({required String enterText, required String labelText}) {
-  return Container(
+  return
+    Container(
     padding: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
     child: TextField(
       cursorColor: Colors.black,
