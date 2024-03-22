@@ -2,6 +2,7 @@ import 'package:country_state_city_pro/country_state_city_pro.dart';
 import 'package:csc_picker/csc_picker.dart';
 import 'package:csc_picker/model/select_status_model.dart';
 import 'package:flutter/material.dart';
+import 'package:intl_phone_field/intl_phone_field.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -11,7 +12,6 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-
   final TextEditingController country = TextEditingController();
   final TextEditingController state = TextEditingController();
   final TextEditingController city = TextEditingController();
@@ -21,8 +21,8 @@ class _HomePageState extends State<HomePage> {
   String cityValue = "";
   String address = "";
 
-  bool passwordVisible=false;
-  bool confirmPasswordVisible=false;
+  bool passwordVisible = false;
+  bool confirmPasswordVisible = false;
 
   @override
   Widget build(BuildContext context) {
@@ -33,36 +33,31 @@ class _HomePageState extends State<HomePage> {
       body: SingleChildScrollView(
         child: Column(
           children: [
-           userDetails(enterText: 'Enter your Name', labelText: 'First Name'),
-           userDetails(enterText: 'Enter your Lastname', labelText: 'Last Name'),
-           userDetails(enterText: 'Enter your Email address', labelText: 'Email'),
-          Container(
-            padding: EdgeInsets.symmetric(horizontal: 10,vertical: 10),
-            child:
-            TextField(
+            userDetails(enterText: 'Enter your Name', labelText: 'First Name'),
+            userDetails(
+                enterText: 'Enter your Lastname', labelText: 'Last Name'),
+            userDetails(
+                enterText: 'Enter your Email address', labelText: 'Email'),
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+              child: IntlPhoneField(
+                dropdownIconPosition: IconPosition.trailing,
+                decoration:  InputDecoration(
+                  labelText: 'Phone Number',
+                  counterText: "",
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(10.0),
+                  ),
+                ),
+                initialCountryCode: 'IN',
 
-              keyboardType: TextInputType.phone,
-              decoration: InputDecoration(
-                border: InputBorder.none,
-                hintText: "Phone Number",
-                // prefix:  CountryPickerDropdown(
-                //   initialValue: 'in',
-                //   itemBuilder: _buildDropdownItem,
-                //   onValuePicked: (Country country) {
-                //     print("${country.name}");
-                //   },
-                // ),
+                onChanged: (phone) {
+                  print(phone.completeNumber);
+                },
               ),
-              onChanged: (value){
-                // this.phoneNo=value;
-              },
-
             ),
-
-          ),
             Container(
-              padding: EdgeInsets.symmetric(horizontal: 10,vertical: 10),
-
+              padding: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
               child: TextField(
                 obscureText: passwordVisible,
                 decoration: InputDecoration(
@@ -71,14 +66,14 @@ class _HomePageState extends State<HomePage> {
                   ),
                   hintText: "Password",
                   labelText: "Password",
-                  helperStyle:TextStyle(color:Colors.green),
+                  helperStyle: TextStyle(color: Colors.green),
                   suffixIcon: IconButton(
                     icon: Icon(passwordVisible
                         ? Icons.visibility
                         : Icons.visibility_off),
                     onPressed: () {
                       setState(
-                            () {
+                        () {
                           passwordVisible = !passwordVisible;
                         },
                       );
@@ -92,7 +87,7 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
             Container(
-              padding: EdgeInsets.symmetric(horizontal: 10,vertical: 10),
+              padding: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
               child: TextField(
                 obscureText: confirmPasswordVisible,
                 decoration: InputDecoration(
@@ -101,15 +96,15 @@ class _HomePageState extends State<HomePage> {
                   ),
                   hintText: "Confirm Password",
                   labelText: "Confirm Password",
-                  helperStyle:TextStyle(color:Colors.green),
+                  helperStyle: TextStyle(color: Colors.green),
                   suffixIcon: IconButton(
                     icon: Icon(confirmPasswordVisible
                         ? Icons.visibility
                         : Icons.visibility_off),
                     onPressed: () {
                       setState(
-                            () {
-                              confirmPasswordVisible = !confirmPasswordVisible;
+                        () {
+                          confirmPasswordVisible = !confirmPasswordVisible;
                         },
                       );
                     },
@@ -121,22 +116,22 @@ class _HomePageState extends State<HomePage> {
                 textInputAction: TextInputAction.done,
               ),
             ),
-           userDetails(enterText: 'Enter a Website', labelText: 'Website'),
-           userDetails(enterText: 'Enter a Postal Code', labelText: 'Postal Code'),
+            userDetails(enterText: 'Enter a Website', labelText: 'Website'),
+            userDetails(
+                enterText: 'Enter a Postal Code', labelText: 'Postal Code'),
             Padding(
-              padding: EdgeInsets.symmetric(horizontal: 10,vertical: 10),
+              padding: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
               child: CountryStateCityPicker(
                   country: country,
                   state: state,
                   city: city,
                   dialogColor: Colors.grey.shade200,
                   textFieldDecoration: InputDecoration(
-                      suffixIcon: Icon(Icons.keyboard_arrow_down),
+                    suffixIcon: Icon(Icons.keyboard_arrow_down),
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(10.0),
                     ),
-                  )
-              ),
+                  )),
             ),
           ],
         ),
@@ -145,10 +140,9 @@ class _HomePageState extends State<HomePage> {
   }
 }
 
- 
 Widget userDetails({required String enterText, required String labelText}) {
-  return  Container(
-    padding: EdgeInsets.symmetric(horizontal: 10,vertical: 10),
+  return Container(
+    padding: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
     child: TextField(
       cursorColor: Colors.black,
       decoration: InputDecoration(
@@ -162,15 +156,4 @@ Widget userDetails({required String enterText, required String labelText}) {
   );
 }
 
-// Widget _buildDropdownItem(Country country) => Container(
-//   child: Row(
-//     children: <Widget>[
-//       // CountryPickerUtils.getDefaultFlagImage(country),
-//       SizedBox(
-//         width: 8.0,
-//       ),
-//       Text("+${country.phoneCode}(${country.isoCode})"),
-//     ],
-//   ),
-// );
 

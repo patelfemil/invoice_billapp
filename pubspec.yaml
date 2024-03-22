@@ -38,7 +38,7 @@ dependencies:
   country_picker: ^2.0.23
   country_state_city_pro: ^0.0.6
   csc_picker: ^0.2.7
-#  flutter_country_picker: ^0.1.6
+  intl_phone_field: ^3.1.0
 
 dev_dependencies:
   flutter_test:
