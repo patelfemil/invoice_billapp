@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:invoice_billapp/controller/binding_controller.dart';
 import 'package:invoice_billapp/splash.dart';
 
 import 'home_page.dart';
@@ -15,6 +16,7 @@ class InvoiceApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
+      initialBinding: BindingController(),
       home: Splash(),
     );
   }

@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:invoice_billapp/add_client_page.dart';
 import 'package:invoice_billapp/business_details.dart';
 import 'package:invoice_billapp/home_page.dart';
 
@@ -20,7 +21,7 @@ class _SplashState extends State<Splash> {
     // TODO: implement initState
     super.initState();
     Timer(Duration(seconds: 2 ), () {
-      Get.to(InstantInvoicePage());
+      Get.to(HomePage());
     });
   }
 
