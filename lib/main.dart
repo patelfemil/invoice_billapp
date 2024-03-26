@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:invoice_billapp/controller/binding_controller.dart';
 
-import 'home_page.dart';
+import 'add_client_page.dart';
 
 void main() {
   runApp(const InvoiceApp());
@@ -11,8 +13,9 @@ class InvoiceApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
       debugShowCheckedModeBanner: false,
+        initialBinding:BindingController(),
       home: HomePage(),
     );
   }
