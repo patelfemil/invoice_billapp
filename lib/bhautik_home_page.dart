@@ -10,6 +10,7 @@ class InstantInvoicePage extends StatefulWidget {
 class _InstantInvoicePageState extends State<InstantInvoicePage> {
   bool a = true;
   TextEditingController oId = TextEditingController();
+
   TextEditingController oDate = TextEditingController();
   TextEditingController cName = TextEditingController();
   TextEditingController cAddress = TextEditingController();
