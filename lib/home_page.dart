@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:invoice_billapp/business_details.dart';
 import 'package:invoice_billapp/controller/home_controller.dart';
 
 class InstantInvoicePage extends StatefulWidget {
@@ -69,7 +70,10 @@ class _InstantInvoicePageState extends State<InstantInvoicePage> {
                     TextButton(onPressed: () {}, child: Text("Printed Invoices",style: TextStyle(color: Colors.black),)),
                     TextButton(onPressed: () {}, child: Text("My Items",style: TextStyle(color: Colors.black),)),
                     TextButton(onPressed: () {}, child: Text("Customers",style: TextStyle(color: Colors.black),)),
-                    TextButton(onPressed: () {}, child: Text("Business Info Settings",style: TextStyle(color: Colors.black),)),
+                    TextButton(onPressed: () {
+
+                      Get.to(BusinessDetails());
+                    }, child: Text("Business Info Settings",style: TextStyle(color: Colors.black),)),
                     TextButton(onPressed: () {}, child: Text("Output Image Quality",style: TextStyle(color: Colors.black),)),
                     TextButton(onPressed: () {}, child: Text("How To Use",style: TextStyle(color: Colors.black),)),
                     TextButton(onPressed: () {}, child: Text("About this app",style: TextStyle(color: Colors.black),)),

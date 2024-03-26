@@ -20,8 +20,9 @@ class _SplashState extends State<Splash> {
   void initState() {
     // TODO: implement initState
     super.initState();
-    Timer(Duration(seconds: 2 ), () {
+    Timer(Duration(seconds: 3 ), () {
       Get.to(HomePage());
+      // Get.to(BusinessDetails());
     });
   }
 
@@ -44,7 +45,9 @@ class _SplashState extends State<Splash> {
               SizedBox(height: 35,),
               Text("Generator Invoices Seconds",style: TextStyle(color: Colors.white,fontSize: 14),),
               SizedBox(height: 45,),
-              // Center(child: Image.asset("assets/img/invoice.png",height: 200,width: 150,)),
+              Center(child: Image.asset("assets/image/splash_screen_img.png",
+
+              )),
               SizedBox(height: 25,),
               Text("Version 1.0.1",style: TextStyle(color: Colors.white54),)
             ],
