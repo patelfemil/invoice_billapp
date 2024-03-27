@@ -1,12 +1,8 @@
 import 'dart:async';
-
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:invoice_billapp/add_client_page.dart';
-import 'package:invoice_billapp/business_details.dart';
-import 'package:invoice_billapp/home_page.dart';
 
-import 'bhautik_home_page.dart';
+
 
 class Splash extends StatefulWidget {
   const Splash({super.key});
@@ -21,7 +17,7 @@ class _SplashState extends State<Splash> {
     // TODO: implement initState
     super.initState();
     Timer(Duration(seconds: 3 ), () {
-      Get.to(HomePage());
+      // Get.to();
       // Get.to(BusinessDetails());
     });
   }
