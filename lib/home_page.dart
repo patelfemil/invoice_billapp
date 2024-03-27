@@ -149,14 +149,14 @@ class _HomePageState extends State<HomePage> {
 }
 
 Widget userDetails({required String enterText, required String labelText}) {
-  return
-    Container(
+  return Container(
     padding: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
     child: TextField(
       cursorColor: Colors.black,
       decoration: InputDecoration(
         labelText: labelText,
         hintText: enterText,
+        helperStyle: TextStyle(color: Colors.green),
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(10.0),
         ),
