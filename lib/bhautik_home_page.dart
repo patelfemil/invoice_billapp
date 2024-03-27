@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:invoice_billapp/controller/home_controller.dart';
 
 class InstantInvoicePage extends StatefulWidget {
   const InstantInvoicePage({super.key});
@@ -10,7 +8,17 @@ class InstantInvoicePage extends StatefulWidget {
 }
 
 class _InstantInvoicePageState extends State<InstantInvoicePage> {
-  HomeController homeController =Get.find();
+  bool a = true;
+  TextEditingController oId = TextEditingController();
+
+  TextEditingController oDate = TextEditingController();
+  TextEditingController cName = TextEditingController();
+  TextEditingController cAddress = TextEditingController();
+  TextEditingController cPhone = TextEditingController();
+  TextEditingController dFees = TextEditingController();
+  TextEditingController aPaid = TextEditingController();
+  TextEditingController tRate = TextEditingController();
+  TextEditingController discount = TextEditingController();
   final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey();
 
   @override
@@ -23,7 +31,7 @@ class _InstantInvoicePageState extends State<InstantInvoicePage> {
             onTap: () {
               scaffoldKey.currentState?.openDrawer();
             },
-            child: Icon(Icons.menu,color: Colors.white,)),
+            child: Icon(Icons.menu)),
         centerTitle: true,
         title: Text(
           "Instant Inovice",
@@ -97,7 +105,7 @@ class _InstantInvoicePageState extends State<InstantInvoicePage> {
                 children: [
                   Flexible(
                     child: TextFormField(
-                      controller: homeController.oId,
+                      controller: oId,
                       decoration: InputDecoration(
                         hintText: "Order ID",
                         hintStyle: TextStyle(color: Colors.grey[400]),
@@ -118,7 +126,7 @@ class _InstantInvoicePageState extends State<InstantInvoicePage> {
                   ),
                   Flexible(
                     child: TextFormField(
-                      controller: homeController.oDate,
+                      controller: oDate,
                       decoration: InputDecoration(
                         hintText: " Order Date",
                         hintStyle: TextStyle(color: Colors.grey[400]),
@@ -157,7 +165,7 @@ class _InstantInvoicePageState extends State<InstantInvoicePage> {
                   ),
                   Flexible(
                     child: TextFormField(
-                      controller: homeController.cName,
+                      controller: cName,
                       decoration: InputDecoration(
                         hintText: "Customer Name",
                         hintStyle: TextStyle(color: Colors.grey[400]),
@@ -189,7 +197,7 @@ class _InstantInvoicePageState extends State<InstantInvoicePage> {
                   ),
                   Flexible(
                     child: TextFormField(
-                      controller: homeController.cAddress,
+                      controller: cAddress,
                       decoration: InputDecoration(
                         hintText: "Customer Address",
                         hintStyle: TextStyle(color: Colors.grey[400]),
@@ -221,7 +229,7 @@ class _InstantInvoicePageState extends State<InstantInvoicePage> {
                   ),
                   Flexible(
                     child: TextFormField(
-                      controller: homeController.cPhone,
+                      controller: cPhone,
                       decoration: InputDecoration(
                         hintText: "Customer Phone",
                         hintStyle: TextStyle(color: Colors.grey[400]),
@@ -253,7 +261,7 @@ class _InstantInvoicePageState extends State<InstantInvoicePage> {
                 children: [
                   Flexible(
                     child: TextFormField(
-                      controller: homeController.dFees,
+                      controller: dFees,
                       decoration: InputDecoration(
                         hintText: "Delivery Fees",
                         hintStyle: TextStyle(color: Colors.grey[400]),
@@ -274,7 +282,7 @@ class _InstantInvoicePageState extends State<InstantInvoicePage> {
                   ),
                   Flexible(
                     child: TextFormField(
-                      controller: homeController.aPaid,
+                      controller: aPaid,
                       decoration: InputDecoration(
                         hintText: "Advance Paid",
                         hintStyle: TextStyle(color: Colors.grey[400]),
@@ -299,7 +307,7 @@ class _InstantInvoicePageState extends State<InstantInvoicePage> {
                 children: [
                   Flexible(
                     child: TextFormField(
-                      controller: homeController.tRate,
+                      controller: tRate,
                       decoration: InputDecoration(
                         hintText: "Tax Rate%",
                         hintStyle: TextStyle(color: Colors.grey[400]),
@@ -320,7 +328,7 @@ class _InstantInvoicePageState extends State<InstantInvoicePage> {
                   ),
                   Flexible(
                     child: TextFormField(
-                      controller: homeController.discount,
+                      controller: discount,
                       decoration: InputDecoration(
                         hintText: "Discount%",
                         hintStyle: TextStyle(color: Colors.grey[400]),
@@ -339,10 +347,10 @@ class _InstantInvoicePageState extends State<InstantInvoicePage> {
                 ],
               ),
               CheckboxListTile(
-                value: homeController.checkBox,
+                value: a,
                 onChanged: (value) {
                   setState(() {
-                    homeController.checkBox = value!;
+                    a = value!;
                   });
                 },
                 title: Text(
