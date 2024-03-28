@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:invoice_billapp/controller/binding_controller.dart';
 import 'package:invoice_billapp/home_page.dart';
+import 'package:invoice_billapp/login_page.dart';
 
 
 
@@ -19,7 +20,7 @@ class _SplashState extends State<Splash> {
     // TODO: implement initState
     super.initState();
     Timer(Duration(seconds: 3 ), () {
-      Get.to(HomePage(),binding: BindingController());
+      Get.to(LoginPage(),binding: BindingController());
       // Get.to(BusinessDetails());
     });
   }

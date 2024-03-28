@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:invoice_billapp/controller/widgetcontroller.dart';
+import 'package:invoice_billapp/login_page.dart';
 
 import 'generate_invoice_page.dart';
 
@@ -39,7 +40,9 @@ class _HomePageState extends State<HomePage> {
                 color: Colors.black87,
               )),
           IconButton(
-              onPressed: () {},
+              onPressed: () {
+                Get.to(LoginPage());
+              },
               icon: Icon(
                 Icons.add,
                 color: Colors.black87,

@@ -17,4 +17,15 @@ Widget text({text,fontSize,fontWeight,color}){
     text,style: TextStyle(fontSize: fontSize,fontWeight:fontWeight,color:color),
   );
 }
+Widget loginfromfield({text,suffixIcon,obscureText}){
+  return TextFormField(
+    obscureText: obscureText??false,
+    decoration: InputDecoration(
+        suffixIcon: suffixIcon,
+        hintText: text,
+        border: OutlineInputBorder(borderRadius: BorderRadius.all(Radius.circular(10)))
+    ),
+  );
 }
+}
+
