@@ -98,7 +98,7 @@ class _HomePageState extends State<HomePage> {
                  SizedBox(width: 10,),
                  Flexible(
                    child: widgetController.textformfield(
-                       text: "Name"
+                       text: "Email Address"
                    ),
                  )
                ],
@@ -108,13 +108,13 @@ class _HomePageState extends State<HomePage> {
                children: [
                  Flexible(
                    child: widgetController.textformfield(
-                       text: "Name"
+                       text: "Phone Number"
                    ),
                  ),
                  SizedBox(width: 10,),
                  Flexible(
                    child: widgetController.textformfield(
-                       text: "Name"
+                       text: "Business Number"
                    ),
                  )
                ],
@@ -137,7 +137,7 @@ class _HomePageState extends State<HomePage> {
                   SizedBox(width: 10,),
                   Flexible(
                     child: widgetController.textformfield(
-                        text: "Name"
+                        text: "Email Address"
                     ),
                   )
                 ],
@@ -147,13 +147,13 @@ class _HomePageState extends State<HomePage> {
                 children: [
                   Flexible(
                     child: widgetController.textformfield(
-                        text: "Name"
+                        text: "Phone Number"
                     ),
                   ),
                   SizedBox(width: 10,),
                   Flexible(
                     child: widgetController.textformfield(
-                        text: "Name"
+                        text: "Pancard Number"
                     ),
                   )
                 ],
@@ -165,24 +165,115 @@ class _HomePageState extends State<HomePage> {
               ),
               SizedBox(height: 20,),
               Container(
-                color: Colors.black26,
-                child: Column(
+                padding: EdgeInsets.symmetric(horizontal: 10,vertical: 10),
+                decoration: BoxDecoration(
+                  color: Colors.black26,
+                  borderRadius: BorderRadius.circular(10),
+                ),
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
-                    Row(
+                    Column(
                       children: [
-                        Expanded(child: widgetController.text(text: "DESCRIPTION",color: Colors.black87,)),
-                        widgetController.text(text: "RATE",color: Colors.black87,),
-                        SizedBox(width: 12,),
-                        widgetController.text(text: "QTY",color: Colors.black87,),
-                        SizedBox(width: 12,),
-                        widgetController.text(text: "AMOUNT",color: Colors.black87,),
+                        widgetController.text(text: "DESCRIPTION",color: Colors.black87,),
+                        Divider(),
+                        Container(
+                            padding: EdgeInsets.symmetric(horizontal: 10,vertical: 10),
+                            decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(5),
+                            ),
+                            child: Text( "Mobile App\nDesign")
+                        ),
                       ],
                     ),
-                    Divider(),
-
+                    Column(
+                      children: [
+                        widgetController.text(text: "RATE",color: Colors.black87,),
+                        Divider(),
+                        Container(
+                            padding: EdgeInsets.symmetric(horizontal: 10,vertical: 10),
+                            decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(5),
+                            ),
+                            child: Text("1200\n")),
+                      ],
+                    ),
+                    Column(
+                      children: [
+                        widgetController.text(text: "QTY",color: Colors.black87,),
+                        Divider(),
+                        Container(
+                            padding: EdgeInsets.symmetric(horizontal: 10,vertical: 10),
+                            decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(5),
+                            ),
+                            child: Text("1\n")),
+                      ],
+                    ),
+                    Column(
+                      children: [
+                        widgetController.text(text: "AMOUNT",color: Colors.black87,),
+                        Divider(),
+                        Container(
+                            padding: EdgeInsets.symmetric(horizontal: 10,vertical: 10),
+                            decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(5),
+                            ),
+                            child: Text("1200\n")),
+                      ],
+                    ),
                   ],
                 ),
-              )
+              ),
+              SizedBox(height: 50,),
+             Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+               children: [
+                 Text('Subtotal -',style: TextStyle(
+                     fontSize: 18,
+                     fontWeight: FontWeight.w500
+                 ),),
+                 widgetController.text(text: '1200',color: Colors.black87,),
+               ],
+             ),
+             SizedBox(height: 20,),
+             Row(
+               mainAxisAlignment: MainAxisAlignment.end,
+               children: [
+                 Text('Tax (0%) -',style: TextStyle(
+                     fontSize: 18,
+                     fontWeight: FontWeight.w500
+                 ),),
+                 widgetController.text(text: '0.00',color: Colors.black87,),
+               ],
+             ),
+             SizedBox(height: 20,),
+             Row(
+               mainAxisAlignment: MainAxisAlignment.end,
+               children: [
+                 Text('Total -' ,style: TextStyle(
+                     fontSize: 18,
+                     fontWeight: FontWeight.w500
+                 ),),
+                 widgetController.text(text: '1200',color: Colors.black87,),
+               ],
+             ),
+             SizedBox(height: 20,),
+             Row(
+               mainAxisAlignment: MainAxisAlignment.end,
+               children: [
+                 Text('Balance Due -' ,style: TextStyle(
+                     fontSize: 18,
+                     fontWeight: FontWeight.w500
+                 ),),
+                 widgetController.text(text: '1200',color: Colors.black87,),
+               ],
+             )
             ],
           ),
         ),
