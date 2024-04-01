@@ -1,12 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_facebook_auth_platform_interface/src/access_token.dart';
 import 'package:get/get.dart';
+import 'package:google_sign_in/google_sign_in.dart';
+import 'package:invoice_billapp/controller/clientdetails_controller.dart';
 import 'package:invoice_billapp/controller/widgetcontroller.dart';
 import 'package:invoice_billapp/login_page.dart';
 
 import 'generate_invoice_page.dart';
 
 class HomePage extends StatefulWidget {
-  const HomePage({super.key});
+  // final AccessToken accessToken;
+  const HomePage(  {super.key});
 
   @override
   State<HomePage> createState() => _HomePageState();
@@ -14,6 +18,7 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   WidgetController widgetController = Get.find();
+  ClientController clientController = Get.find();
 
   @override
   Widget build(BuildContext context) {
@@ -41,7 +46,7 @@ class _HomePageState extends State<HomePage> {
               )),
           IconButton(
               onPressed: () {
-                Get.to(LoginPage());
+                clientController.handleSignOut();
               },
               icon: Icon(
                 Icons.add,

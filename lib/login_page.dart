@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:intl_phone_field/intl_phone_field.dart';
+import 'package:invoice_billapp/controller/clientdetails_controller.dart';
 import 'controller/widgetcontroller.dart';
 
 class LoginPage extends StatefulWidget {
@@ -19,6 +20,7 @@ class _LoginPageState extends State<LoginPage> {
   }
 
   WidgetController widgetController = Get.find();
+  ClientController clientController = Get.find();
 
   @override
   Widget build(BuildContext context) {
@@ -113,27 +115,32 @@ class _LoginPageState extends State<LoginPage> {
                 SizedBox(
                   height: 20,
                 ),
-                Container(
-                  decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(30),
-                      boxShadow: [
-                        BoxShadow(
-                            color: Colors.black26,
-                            blurRadius: 1.0,
-                            spreadRadius: 1.0,
-                            )
-                      ]),
-                  child: ListTile(
-                    contentPadding:
-                    EdgeInsets.symmetric(horizontal: 65),
-                    leading: Image.asset("assets/image/google_300221 (1).png",
-                        height: 30),
-                    title: Text("Login with Google",
-                        style: TextStyle(
-                            fontSize: 18,
-                            color: Colors.black,
-                            fontWeight: FontWeight.bold)),
+                InkWell(
+                  onTap: (){
+                    clientController.handleSignIn();
+                  },
+                  child: Container(
+                    decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(30),
+                        boxShadow: [
+                          BoxShadow(
+                              color: Colors.black26,
+                              blurRadius: 1.0,
+                              spreadRadius: 1.0,
+                              )
+                        ]),
+                    child: ListTile(
+                      contentPadding:
+                      EdgeInsets.symmetric(horizontal: 65),
+                      leading: Image.asset("assets/image/google_300221 (1).png",
+                          height: 30),
+                      title: Text("Login with Google",
+                          style: TextStyle(
+                              fontSize: 18,
+                              color: Colors.black,
+                              fontWeight: FontWeight.bold)),
+                    ),
                   ),
                 ),
               ],

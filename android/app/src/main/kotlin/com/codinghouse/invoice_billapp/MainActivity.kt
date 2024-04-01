@@ -1,4 +1,4 @@
-package com.codinghouse.invoice_billapp
+package com.example.invoice
 
 import io.flutter.embedding.android.FlutterActivity
 

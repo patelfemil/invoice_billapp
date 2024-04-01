@@ -1,6 +1,6 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+
 
 class WidgetController extends GetxController{
 Widget textformfield({text,int,}){
@@ -8,7 +8,7 @@ Widget textformfield({text,int,}){
     maxLines: int,
     decoration: InputDecoration(
       hintText: text,
-          border: OutlineInputBorder(borderRadius: BorderRadius.all(Radius.circular(10)))
+          border: const OutlineInputBorder(borderRadius: BorderRadius.all(Radius.circular(10)))
     ),
   );
 }
@@ -23,9 +23,13 @@ Widget loginfromfield({text,suffixIcon,obscureText}){
     decoration: InputDecoration(
         suffixIcon: suffixIcon,
         hintText: text,
-        border: OutlineInputBorder(borderRadius: BorderRadius.all(Radius.circular(10)))
+        border: const OutlineInputBorder(borderRadius: BorderRadius.all(Radius.circular(10)))
     ),
   );
 }
+
+
+
+
 }
 

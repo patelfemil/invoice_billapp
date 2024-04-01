@@ -100,7 +100,8 @@ class _GenerateInvoicePageState extends State<GenerateInvoicePage> {
                         decoration: BoxDecoration(shape: BoxShape.rectangle),
                       )
                     ],
-                  )
+                  ),
+
                 ],
               ),
             ),
