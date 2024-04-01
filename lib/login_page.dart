@@ -2,9 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:intl_phone_field/intl_phone_field.dart';
-import 'package:invoice_billapp/home_page.dart';
-
-import 'controller/binding_controller.dart';
 import 'controller/widgetcontroller.dart';
 
 class LoginPage extends StatefulWidget {
