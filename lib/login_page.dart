@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
+import 'package:intl_phone_field/intl_phone_field.dart';
 import 'package:invoice_billapp/home_page.dart';
 
 import 'controller/binding_controller.dart';
@@ -14,92 +15,132 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
-
-  bool passwordVisible = false;
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
   }
-  WidgetController widgetController=Get.find();
+
+  WidgetController widgetController = Get.find();
+
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Padding(
-        padding:  EdgeInsets.symmetric(horizontal: 15,vertical: 15),
-        child: SingleChildScrollView(
-          child: Column(
-            children: [
-              Image.asset('assets/image/login_bg_img.png',fit: BoxFit.cover,height: 250),
-              SizedBox(height: 40,),
-              Center(
-                child: Text('LOGIN',style: TextStyle(
-                  color: Colors.indigo[400],
-                  fontSize: 30,fontWeight: FontWeight.bold
-                ),),
-              ),
-              SizedBox(height: 20,),
-              widgetController.loginfromfield(
-                text: 'User Name',
-                suffixIcon: Icon(Icons.person),
-              ),
-              SizedBox(height: 20,),
-              widgetController.loginfromfield(
-                text: 'Password',
-                obscureText: passwordVisible,
-                suffixIcon: IconButton(
-                  icon: Icon(
-                    passwordVisible
-                        ? Icons.visibility
-                        : Icons.visibility_off,
-                    color: Theme.of(context).primaryColorDark,
+    return SafeArea(
+      child: Scaffold(
+        body: SingleChildScrollView(
+          child: Container(
+            padding: EdgeInsets.symmetric(horizontal: 15, vertical: 10),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                SizedBox(
+                  height: 10,
+                ),
+                Text('Sign up',
+                    style: TextStyle(
+                      fontSize: 25,
+                      fontWeight: FontWeight.w500,
+                    )),
+                SizedBox(
+                  height: 10,
+                ),
+                Text(
+                  'Get control of your business with Bill App',
+                  style: TextStyle(
+                      fontWeight: FontWeight.w500, color: Colors.black26),
+                ),
+                SizedBox(
+                  height: 50,
+                ),
+                IntlPhoneField(
+                  decoration: InputDecoration(
+                    counterText:'',
+                    labelText: 'Phone Number',
+                    border: OutlineInputBorder(
+                      borderSide: BorderSide(),
+                    ),
                   ),
-                  onPressed: () {
-                    setState(() {
-                      passwordVisible = !passwordVisible;
-                    });
+                  initialCountryCode: 'IN',
+                  onChanged: (phone) {
+                    print(phone.completeNumber);
                   },
                 ),
-              ),
-              SizedBox(height: 20,),
-              widgetController.text(
-                text: 'Forgot Password?',
-                fontSize: 15.0,
-                fontWeight: FontWeight.w500,
-                color: Colors.red,
-              ),
-              SizedBox(height: 20,),
-              TextButton(
-                  style: ButtonStyle(
-                    backgroundColor: MaterialStatePropertyAll(Colors.indigo[400]),
-                    padding: MaterialStatePropertyAll(
-                      EdgeInsets.symmetric(horizontal: 145,vertical: 15)
-                    )
+                SizedBox(
+                  height: 50,
+                ),
+                Container(
+                  padding: EdgeInsets.symmetric(horizontal: 50, vertical: 15),
+                  decoration: BoxDecoration(
+                    color: Colors.indigo,
+                    borderRadius: BorderRadius.circular(30),
                   ),
-                  onPressed: () {
-                    Get.to(HomePage(),binding: BindingController());
-                  }, child:Text('Login Now',style: TextStyle(
-                color: Colors.white,
-                fontSize: 15,
-                fontWeight: FontWeight.w500,
-              ),)),
-              SizedBox(height: 20,),
-              Row(
-                children: [
-                  Text('New user',style: TextStyle(fontSize: 15,fontWeight: FontWeight.w500,color: Colors.redAccent),),
-                  TextButton(onPressed: () {},
-                      child: Text('Signup',style: TextStyle(
-                        color: Colors.indigo,
-                          fontSize: 15,fontWeight: FontWeight.w500
-                      ),),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text('Get OTP',
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 18,
+                              fontWeight: FontWeight.w500)),
+                    ],
                   ),
-                  Spacer(),
-                  Image.asset('assets/image/facebook_11378528.png',height: 35,),
-                  SizedBox(width: 15,),
-                  Image.asset('assets/image/google_2991148.png',height: 33),
-                ],
-              )
-            ],
+                ),
+                SizedBox(
+                  height: 20,
+                ),
+                Row(
+                  children: [
+                    Expanded(
+                      child: Container(
+                        height: 1,
+                        color: Color(0xffBDBDBD),
+                      ),
+                    ),
+                    SizedBox(width: 15,),
+                    Container(
+                        child: Text('Or',style: TextStyle(
+                          color: Colors.black45,
+                          fontSize: 18,
+                          fontWeight: FontWeight.w500
+                        ),)
+                    ),
+                    SizedBox(width: 10,),
+                    Expanded(
+                      child: Container(
+                        height: 1,
+                        color: Color(0xffBDBDBD),
+                      ),
+                    ),
+                  ],
+                ),
+                SizedBox(
+                  height: 20,
+                ),
+                Container(
+                  decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(30),
+                      boxShadow: [
+                        BoxShadow(
+                            color: Colors.black26,
+                            blurRadius: 1.0,
+                            spreadRadius: 1.0,
+                            )
+                      ]),
+                  child: ListTile(
+                    contentPadding:
+                    EdgeInsets.symmetric(horizontal: 65),
+                    leading: Image.asset("assets/image/google_300221 (1).png",
+                        height: 30),
+                    title: Text("Login with Google",
+                        style: TextStyle(
+                            fontSize: 18,
+                            color: Colors.black,
+                            fontWeight: FontWeight.bold)),
+                  ),
+                ),
+              ],
+            ),
           ),
         ),
       ),
