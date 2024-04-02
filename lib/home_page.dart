@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:invoice_billapp/controller/widgetcontroller.dart';
 import 'package:invoice_billapp/login_page.dart';
-
 import 'generate_invoice_page.dart';
 
 class HomePage extends StatefulWidget {

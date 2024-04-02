@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:intl_phone_field/intl_phone_field.dart';
+import 'package:invoice_billapp/otp_page.dart';
 import 'controller/widgetcontroller.dart';
 
 class LoginPage extends StatefulWidget {
@@ -65,21 +66,26 @@ class _LoginPageState extends State<LoginPage> {
                 SizedBox(
                   height: 50,
                 ),
-                Container(
-                  padding: EdgeInsets.symmetric(horizontal: 50, vertical: 15),
-                  decoration: BoxDecoration(
-                    color: Colors.indigo,
-                    borderRadius: BorderRadius.circular(30),
-                  ),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text('Get OTP',
-                          style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 18,
-                              fontWeight: FontWeight.w500)),
-                    ],
+                InkWell(
+                  onTap: () {
+                    Get.to(OtpPage());
+                  },
+                  child: Container(
+                    padding: EdgeInsets.symmetric(horizontal: 50, vertical: 15),
+                    decoration: BoxDecoration(
+                      color: Colors.indigo,
+                      borderRadius: BorderRadius.circular(30),
+                    ),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text('Get OTP',
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 18,
+                                fontWeight: FontWeight.w500)),
+                      ],
+                    ),
                   ),
                 ),
                 SizedBox(
@@ -88,10 +94,12 @@ class _LoginPageState extends State<LoginPage> {
                 Row(
                   children: [
                     Expanded(
-                      child: Container(
+                      child: Divider(
+                        thickness: 1,
+                        indent: 5,
                         height: 1,
                         color: Color(0xffBDBDBD),
-                      ),
+                      )
                     ),
                     SizedBox(width: 15,),
                     Container(
@@ -103,10 +111,12 @@ class _LoginPageState extends State<LoginPage> {
                     ),
                     SizedBox(width: 10,),
                     Expanded(
-                      child: Container(
+                      child:Divider(
+                        thickness: 1,
+                        indent: 5,
                         height: 1,
                         color: Color(0xffBDBDBD),
-                      ),
+                      )
                     ),
                   ],
                 ),
@@ -119,10 +129,10 @@ class _LoginPageState extends State<LoginPage> {
                       borderRadius: BorderRadius.circular(30),
                       boxShadow: [
                         BoxShadow(
-                            color: Colors.black26,
-                            blurRadius: 1.0,
-                            spreadRadius: 1.0,
-                            )
+                          color: Colors.black12,
+                          blurRadius: 1.0,
+                          spreadRadius: 1.0,
+                        )
                       ]),
                   child: ListTile(
                     contentPadding:
