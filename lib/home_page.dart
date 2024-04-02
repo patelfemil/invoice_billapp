@@ -5,7 +5,6 @@ import 'package:google_sign_in/google_sign_in.dart';
 import 'package:invoice_billapp/controller/clientdetails_controller.dart';
 import 'package:invoice_billapp/controller/widgetcontroller.dart';
 import 'package:invoice_billapp/login_page.dart';
-
 import 'generate_invoice_page.dart';
 
 class HomePage extends StatefulWidget {
